@@ -1,10 +1,10 @@
 <div class="app-header">
   <div class="logo" routerLink="/">
     <img
-      src="https://res.cloudinary.com/comparte/image/upload/v1625633174/logo.svg"
+      src="assets/aramco_logo.png"
       alt="Project logo"
     />
-    <span>Kanban Project Management</span>
+    <span>ATC Ideation Portal</span>
   </div>
   <div class="nav-options">
     <button
@@ -14,7 +14,7 @@
       nz-dropdown
       [nzDropdownMenu]="projectsMenu"
     >
-      Projects
+      Ideas
       <i nz-icon nzType="down"></i>
     </button>
     <nz-dropdown-menu #projectsMenu="nzDropdownMenu">
@@ -39,9 +39,9 @@
           </ul>
         </li>
         <nz-divider></nz-divider>
-        <li nz-menu-item routerLink="projects/all">View all projects</li>
+        <li nz-menu-item routerLink="projects/all">View all Ideas</li>
         <li nz-menu-item routerLink="projects/new">
-          <i nz-icon nzType="plus" nzTheme="outline"></i>Create project
+          <i nz-icon nzType="plus" nzTheme="outline"></i>Create Idea
         </li>
       </ul>
     </nz-dropdown-menu>
@@ -93,7 +93,7 @@
       (click)="openCreateIssueModal()"
       [disabled]="(isCurrentProject$ | async) === false"
     >
-      Create
+      Create Task
     </button>
   </div>
   <div class="nav-options">

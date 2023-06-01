@@ -1,10 +1,10 @@
-<nz-page-header class="site-page-header" nzTitle="Kanban board">
+<nz-page-header class="site-page-header" nzTitle="Ideation Board">
   <nz-breadcrumb
     nz-page-header-breadcrumb
     *ngIf="currentProject$ | async as project"
   >
     <nz-breadcrumb-item
-      ><a routerLink="/projects/all">Projects</a></nz-breadcrumb-item
+      ><a routerLink="/projects/all">Ideas</a></nz-breadcrumb-item
     >
     <nz-breadcrumb-item>
       <a routerLink="/board">{{ project.name }}</a>
@@ -12,7 +12,7 @@
     <nz-breadcrumb-item>{{ project.key | uppercase }} board</nz-breadcrumb-item>
   </nz-breadcrumb>
 
-  <nz-page-header-extra>
+  <!-- <nz-page-header-extra>
     <a
       href="https://github.com/sldiaz04us/kanban-project-management"
       target="_blank"
@@ -32,5 +32,5 @@
         >LinkedIn
       </button>
     </a>
-  </nz-page-header-extra>
+  </nz-page-header-extra> -->
 </nz-page-header>

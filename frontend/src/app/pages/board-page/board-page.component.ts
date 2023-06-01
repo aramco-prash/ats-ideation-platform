@@ -25,7 +25,7 @@ export class BoardPageComponent implements OnInit {
   issuesError$: Observable<string>;
 
   constructor(private store: Store<AppState>, private titleService: Title) {
-    this.titleService.setTitle('Project board - Kanban Project Management');
+    this.titleService.setTitle('ATC Ideation Portal');
   }
 
   ngOnInit() {
