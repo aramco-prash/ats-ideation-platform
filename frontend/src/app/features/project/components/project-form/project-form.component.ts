@@ -105,6 +105,14 @@ export class ProjectFormComponent implements OnInit, OnDestroy {
     }
     this.isLoading = true;
 
+    if(this.projectForm.get(['name']).value === 'Business Travel Arrangement') {
+        // write code to build a pop-up window showing the message "You maybe interested in our Business Travel Arrangement policies. Here's a brief summary on it: ..."
+        // and a button "Learn More" that will redirect to the page "https://www.comparte.com/business-travel-arrangement"
+        // and a button "Close" that will close the pop-up window
+        // the pop-up window should be closed when the user clicks outside of the pop-up window
+        
+    }
+
     if (this.editMode) {
       const projectUpdated: Project = {
         ...this.currentProject,
