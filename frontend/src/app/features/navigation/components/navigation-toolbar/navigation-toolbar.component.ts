@@ -58,7 +58,7 @@ export class NavigationToolbarComponent implements OnInit, OnDestroy {
 
   openCreateIssueModal() {
     this.modalService.create({
-      nzTitle: 'Create Issue',
+      nzTitle: 'Create Suggestion',
       nzContent: IssueCreateModalComponent,
       nzFooter: null,
       nzKeyboard: false,

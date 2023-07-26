@@ -1,5 +1,5 @@
 <div class="project-form">
-  <h1 *ngIf="!editMode">Create project</h1>
+  <h1 *ngIf="!editMode">Create idea</h1>
   <form nz-form nzLayout="vertical" [formGroup]="projectForm">
     <nz-form-item class="default-form-item">
       <nz-form-label nzRequired>Name</nz-form-label>
@@ -7,7 +7,7 @@
         <input
           nz-input
           formControlName="name"
-          placeholder="Enter a project name"
+          placeholder="Enter an idea name"
         />
         <ng-template #nameErrorTempl let-control>
           <ng-container *ngIf="control.hasError('required')">
@@ -34,7 +34,7 @@
             You must enter at least 2 characters
           </ng-container>
           <ng-container *ngIf="control.hasError('uniqueProjectKey')">
-            A project with that key already exists.
+            An idea with that key already exists.
           </ng-container>
         </ng-template>
       </nz-form-control>
@@ -48,7 +48,7 @@
     </nz-form-item>
 
     <nz-form-item class="small-form-item">
-      <nz-form-label>Project category</nz-form-label>
+      <nz-form-label>Idea category</nz-form-label>
       <nz-form-control>
         <nz-select nzShowSearch formControlName="category">
           <nz-option
