@@ -26,7 +26,7 @@ export class NavigationToolbarComponent implements OnInit, OnDestroy {
   @Input() projects$: Observable<Project[]>;
   @Input() currentUser: User;
   isCurrentProject$: Observable<boolean>;
-  disableTask: boolean;
+
   private destroy$ = new Subject();
 
   isSidebarCollapsed = false;
@@ -45,7 +45,6 @@ export class NavigationToolbarComponent implements OnInit, OnDestroy {
     this.isCurrentProject$ = this.store.select(isCurrentProject);
   }
 
-
   onCollapseSidebar(): void {
     this.isSidebarCollapsed = !this.isSidebarCollapsed;
     this.navigationService.collapseSidebar(this.isSidebarCollapsed);
@@ -59,7 +58,7 @@ export class NavigationToolbarComponent implements OnInit, OnDestroy {
 
   openCreateIssueModal() {
     this.modalService.create({
-      nzTitle: 'Create Task',
+      nzTitle: 'Create Issue',
       nzContent: IssueCreateModalComponent,
       nzFooter: null,
       nzKeyboard: false,

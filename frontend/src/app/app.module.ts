@@ -26,6 +26,8 @@ import { CoreModule } from '@core/core.module';
 import { ProjectModule } from '@features/project/project.module';
 import { UserModule } from '@features/user/user.module';
 
+import {LoadingPageComponent} from "@features/loading-page/loading-page.component";
+
 registerLocaleData(en);
 
 @NgModule({
