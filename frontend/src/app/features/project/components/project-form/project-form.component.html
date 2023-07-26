@@ -95,6 +95,20 @@
           >
             {{ editMode ? "Save" : "Create" }}
           </button>
+          <button nz-button [nzType]="'primary'" (click)="showModal()" class="modal-content"><span>ChatGPT</span></button>
+          <nz-modal [(nzVisible)]="isVisible" nzTitle="ATC ChatGPT" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+            <ng-container *nzModalContent>
+              <nz-spin [nzSpinning]="loadSpinner" nzTip = 'Quering Open AI...'>
+              </nz-spin>
+
+              <div *ngIf="!loadSpinner && showAlternateContent">
+                  <p>Here are some things we found:</p>
+                  <p>A travel policy is an essential document for your company that considers the rules and budgets for all business travel, safety measures, and travel-related expenses. There are some general rules of thumb common to most businesses, but the parameters of most rules are set by the individual company.</p>
+                <a *ngIf="alternateContentUrl" [href]="alternateContentUrl" target="_blank" class="content-link">Learn More</a>
+                  <!-- Add any other relevant content here -->
+              </div>
+            </ng-container>
+          </nz-modal>
         </div>
       </nz-form-control>
     </nz-form-item>

@@ -19,6 +19,7 @@ import {
 } from '@features/project/state/actions';
 import { User } from '@core/interfaces/user';
 
+
 @Component({
   selector: 'project-form',
   templateUrl: './project-form.component.html',
@@ -35,6 +36,10 @@ export class ProjectFormComponent implements OnInit, OnDestroy {
   defaultEditorOptions = QuillEditorUtil.getDefaultModuleOptions();
   projectCategories = ProjectConst.ProjectCategories;
   isLoading: boolean;
+  loadSpinner : boolean;
+  isVisible : boolean;
+  showAlternateContent : boolean;
+  alternateContentUrl = "https://www.comparte.com/business-travel-arrangement"
 
   constructor(
     private fb: FormBuilder,
@@ -99,18 +104,39 @@ export class ProjectFormComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
+  showModal(): void {
+    this.isVisible = true;
+    this.loadSpinner = true;
+
+    // Simulate an async operation to load content.
+    setTimeout(() => {
+      this.loadSpinner = false; // Set loading to false when content is loaded.
+      this.showAlternateContent = true;
+    }, 3000); // Simulate a 3-second async operation, adjust the duration as needed.
+  }
+
+  handleOk(): void {
+    this.isVisible = false;
+  }
+
+  handleCancel(): void {
+    this.isVisible = false;
+    this.showAlternateContent = false;
+  }
+
   submitForm() {
     if (this.projectForm.invalid) {
       return;
     }
     this.isLoading = true;
-
+    this.loadSpinner = true;
     if(this.projectForm.get(['name']).value === 'Business Travel Arrangement') {
-        // write code to build a pop-up window showing the message "You maybe interested in our Business Travel Arrangement policies. Here's a brief summary on it: ..."
-        // and a button "Learn More" that will redirect to the page "https://www.comparte.com/business-travel-arrangement"
-        // and a button "Close" that will close the pop-up window
-        // the pop-up window should be closed when the user clicks outside of the pop-up window
-        
+      // write code to build a pop-up window showing the message "You maybe interested in our Business Travel Arrangement policies. Here's a brief summary on it: ..."
+      // and a button "Learn More" that will redirect to the page "https://www.comparte.com/business-travel-arrangement"
+      // and a button "Close" that will close the pop-up window
+      // the pop-up window should be closed when the user clicks outside of the pop-up window
+
+      return
     }
 
     if (this.editMode) {

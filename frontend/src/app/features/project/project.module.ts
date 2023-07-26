@@ -29,6 +29,11 @@ import { SharedModule } from '@shared/shared.module';
 import { ProjectNotSelectedComponent } from './components/project-not-selected/project-not-selected.component';
 import { ProjectLeadSelectComponent } from './components/project-lead-select/project-lead-select.component';
 
+import { LoadingPageComponent } from "@features/loading-page/loading-page.component";
+import {NzSpinModule} from "ng-zorro-antd/spin";
+import {NzAlertModule} from "ng-zorro-antd/alert";
+import {NzModalModule} from "ng-zorro-antd/modal";
+
 @NgModule({
   declarations: [
     ProjectHeaderComponent,
@@ -36,7 +41,8 @@ import { ProjectLeadSelectComponent } from './components/project-lead-select/pro
     ProjectPeopleAddModalComponent,
     ProjectActionsComponent,
     ProjectNotSelectedComponent,
-    ProjectLeadSelectComponent
+    ProjectLeadSelectComponent,
+    LoadingPageComponent
   ],
   imports: [
     CommonModule,
@@ -56,7 +62,10 @@ import { ProjectLeadSelectComponent } from './components/project-lead-select/pro
     NzDropDownModule,
     NzEmptyModule,
     IconsProviderModule,
-    SharedModule
+    SharedModule,
+    NzSpinModule,
+    NzAlertModule,
+    NzModalModule
   ],
   exports: [
     ProjectHeaderComponent,
@@ -70,6 +79,7 @@ import { ProjectLeadSelectComponent } from './components/project-lead-select/pro
     NzFormModule,
     NzInputModule,
     NzButtonModule,
+    LoadingPageComponent
   ]
 })
 export class ProjectModule { }
